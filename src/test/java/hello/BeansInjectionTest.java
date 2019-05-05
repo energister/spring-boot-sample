@@ -31,9 +31,9 @@ public class BeansInjectionTest {
     @TestConfiguration
     public static class TestConfig {
 
-        public static final String EXPLICIT_BEAN_NAME = "explicitBeanName";
+        static final String EXPLICIT_BEAN_NAME = "explicitBeanName";
 
-        public static final String EXPLICIT_BEAN_VALUE = "bean name set explicitly by the @Bean, not by the method name";
+        static final String EXPLICIT_BEAN_VALUE = "bean name set explicitly by the @Bean, not by the method name";
 
         @Bean(name = EXPLICIT_BEAN_NAME)
         public SimpleBean simpleBean() {
@@ -41,12 +41,12 @@ public class BeansInjectionTest {
         }
     }
 
+    // Use @Autowired annotation to wire by type.
     // Bean that is injected because it is marked as @Primary
-    // @Autowired annotation wires by type
     @Autowired
     private SimpleBean bean1;
 
-    // @Resource annotation wires by bean name
+    // Use @Resource annotation to wire by bean name
     @Resource(name = EXPLICIT_BEAN_NAME)
     private SimpleBean bean2;
 
