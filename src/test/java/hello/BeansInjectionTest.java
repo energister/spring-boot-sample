@@ -25,7 +25,7 @@ import static org.junit.Assert.assertThat;
  *   https://www.sourceallies.com/2011/08/spring-injection-with-resource-and-autowired/
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest
 public class BeansInjectionTest {
 
     @TestConfiguration
