@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -24,12 +25,10 @@ import static org.junit.Assert.assertThat;
  *   https://www.sourceallies.com/2011/08/spring-injection-with-resource-and-autowired/
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = {Application.class, BeansInjectionTest.TestConfig.class})
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BeansInjectionTest {
 
-    /**
-     * Note that the class is {@code static}
-     */
+    @TestConfiguration
     public static class TestConfig {
 
         public static final String EXPLICIT_BEAN_NAME = "explicitBeanName";
