@@ -1,5 +1,6 @@
 package hello.testconfiguration;
 
+import hello.SimpleService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,8 +14,12 @@ abstract class TestConfigurationTestBase {
     @Autowired
     private SomeTestBean bean;
 
+    @Autowired
+    private SimpleService service;
+
     @Test
     public void injected() {
         assertNotNull(bean);
+        assertNotNull(service);
     }
 }

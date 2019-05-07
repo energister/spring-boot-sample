@@ -12,7 +12,11 @@ public class TestConfigurationOption1Test extends TestConfigurationTestBase {
 
     /**
      * Note {@code @TestConfiguration} annotation.
-     * Also note that the class is {@code static}
+     * Also note that the class is {@code static}.
+     *
+     * Warning:
+     * doesn't work if configuration classes are specified explicitly as
+     * (@SpringBootTest(classes = { Application.class }))
      */
     @TestConfiguration
     public static class TestConfig {
