@@ -19,7 +19,7 @@ import static org.junit.Assert.assertThat;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class OverrideBeanInTest {
+public class OverrideBeanInTest1 {
 
     @TestConfiguration
     public static class TestConfig {
