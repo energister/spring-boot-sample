@@ -1,4 +1,4 @@
-package hello;
+package hello.injection1;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,13 +10,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 
-import static hello.BeansInjectionTest.TestConfig.EXPLICIT_BEAN_NAME;
-import static hello.BeanInjectionTestConfiguration.FACTORY_BEAN_NAME;
+import static hello.injection1.BeansInjectionTest.TestConfig.EXPLICIT_BEAN_NAME;
+import static hello.injection1.BeanInjectionTestConfiguration.FACTORY_BEAN_NAME;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 /**
+ * Demonstrates how to inject beans by type and by name
+ *
  * See
  *   java - @Resource vs @Autowired - Stack Overflow
  *   https://stackoverflow.com/questions/4093504/resource-vs-autowired
@@ -42,7 +44,7 @@ public class BeansInjectionTest {
     }
 
     // Use @Autowired annotation to wire by type.
-    // Bean that is injected because it is marked as @Primary
+    // Bean is injected because it is marked as @Primary
     @Autowired
     private SimpleBean bean1;
 

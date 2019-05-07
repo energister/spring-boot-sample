@@ -1,4 +1,4 @@
-package hello;
+package hello.injection1;
 
 public class SimpleBean {
     private String value;

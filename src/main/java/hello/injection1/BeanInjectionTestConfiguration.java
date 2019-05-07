@@ -1,4 +1,4 @@
-package hello;
+package hello.injection1;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
