@@ -1,0 +1,6 @@
+SpringBootTestContextBootstrapper.getOrFindConfigurationClasses()
+
+TestTypeExcludeFilter and @TestComponent
+https://stackoverflow.com/a/59815772/355438
+
+INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [...]: ... does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
