@@ -14,8 +14,8 @@ public class TestConfigurationOption2Test extends TestConfigurationTestBase {
     public static class TestConfig {
 
         @Bean
-        public SomeTestBean testBean() {
-            return new SomeTestBean();
+        public TestBean testBean() {
+            return new TestBean();
         }
     }
 }

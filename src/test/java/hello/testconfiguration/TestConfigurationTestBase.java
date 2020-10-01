@@ -8,11 +8,8 @@ import static org.junit.Assert.assertNotNull;
 
 abstract class TestConfigurationTestBase {
 
-    protected static class SomeTestBean {
-    }
-
     @Autowired
-    private SomeTestBean bean;
+    private TestBean bean;
 
     @Autowired
     private SimpleService service;
