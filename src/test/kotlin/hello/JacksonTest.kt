@@ -42,10 +42,10 @@ class JacksonTest {
     fun zonedDateTimeSerializedAsStringWithWriteDatesAsTimeStamps() {
         val time = ZonedDateTime.of(2020, 2, 2, 23, 38, 1, 123_000_000, ZoneId.of("Europe/Moscow"))
 
-        val writer = instantiateObjectMapper().writer()
-            .with(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+        val mapper = instantiateObjectMapper()
+            .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, true)
 
-        val serialized = writer.writeValueAsString(time)
+        val serialized = mapper.writeValueAsString(time)
 
         assertEquals("1580675881.123000000", serialized)
     }
@@ -67,11 +67,10 @@ class JacksonTest {
     fun zonedDateTimeDeserializationWithoutAdjustDatesToContextTimeZone() {
         val serialized = """"2020-10-02T01:21:19.365+03:00[Europe/Moscow]""""
 
-        val reader = instantiateObjectMapper().reader()
-            .without(DeserializationFeature.ADJUST_DATES_TO_CONTEXT_TIME_ZONE)
+        val mapper = instantiateObjectMapper()
+            .configure(DeserializationFeature.ADJUST_DATES_TO_CONTEXT_TIME_ZONE, false)
 
-        val deserialized = reader.forType(ZonedDateTime::class.java)
-            .readValue<ZonedDateTime>(serialized)
+        val deserialized = mapper.readValue(serialized, ZonedDateTime::class.java)
 
         val expected = ZonedDateTime.of(2020, 10, 2, 1, 21, 19, 365_000_000, ZoneId.of("Europe/Moscow"))
         assertEquals(expected, deserialized)
